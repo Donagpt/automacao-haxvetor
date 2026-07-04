@@ -1,0 +1,11 @@
+client_name,service_type,frequency,last_service_date,contact,address,region
+João Silva,dedetização,mensal,2026-06-01,1199999-1111,Rua das Flores 123,Centro
+Maria Santos,dedetização+desratização,trimestral,2026-03-15,1198888-2222,Av. Paulista 1000,Zona Sul
+Empresa ABC,limpeza reservatório,semestral,2026-01-20,2197777-3333,Rua Oliveira 50,Zona Norte
+Condomínio X,cupim,anual,2025-07-10,2196666-4444,Rua do Sol 77,Centro
+Oficina Y,dedetização,mensal,2026-06-10,1195555-5555,Av. Rio Branco 222,Zona Oeste
+Sítio Z,desratização,trimestral,2026-04-05,1194444-6666,Estrada Rural 10,Interior
+Escola Nova,limpeza reservatório,semestral,2025-12-15,2193333-7777,Rua da Escola 300,Zona Norte
+Restaurante Bom Sabor,dedetização,mensal,2026-06-03,1192222-8888,Rua das Palmeiras 45,Centro
+Clínica Saúde,dedetização+desratização,trimestral,2026-02-28,1191111-9999,Rua da Saúde 12,Zona Sul
+Condomínio Lagoa,cupim,anual,2025-08-25,2190000-0000,Av. da Lagoa 400,Zona Oeste
