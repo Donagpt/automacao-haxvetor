@@ -1,13 +1,93 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HaxVetor | Sistema Interno</title>
-    <link rel="stylesheet" href="./HaxVetor-styles.css" />
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="./HaxVetor-app.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HaxVetor | Agenda de Serviços</title>
+  <link rel="stylesheet" href="HaxVetor-styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">HAXVETOR</p>
+      <h1>Agenda de Serviços</h1>
+      <p class="subtitle">Programação, equipe e acompanhamento em um só lugar.</p>
+    </div>
+    <button id="newServiceBtn" class="primary">+ Novo serviço</button>
+  </header>
+
+  <main>
+    <section class="summary" aria-label="Resumo">
+      <article><span id="totalCount">0</span><small>Total</small></article>
+      <article><span id="waitingCount">0</span><small>Aguardando</small></article>
+      <article><span id="progressCount">0</span><small>Em andamento</small></article>
+      <article><span id="doneCount">0</span><small>Concluídos</small></article>
+    </section>
+
+    <section class="toolbar">
+      <input id="searchInput" type="search" placeholder="Buscar cliente, serviço ou colaborador">
+      <select id="statusFilter">
+        <option value="">Todos os status</option>
+        <option>Aguardando</option>
+        <option>Em andamento</option>
+        <option>Concluído</option>
+        <option>Imprevisto</option>
+      </select>
+    </section>
+
+    <section id="serviceList" class="service-list"></section>
+  </main>
+
+  <dialog id="serviceDialog">
+    <form id="serviceForm" method="dialog">
+      <div class="dialog-head">
+        <h2>Novo serviço</h2>
+        <button type="button" id="closeDialog" class="icon-btn" aria-label="Fechar">×</button>
+      </div>
+      <input type="hidden" id="serviceId">
+      <label>Data<input id="date" type="date" required></label>
+      <label>Horário<input id="time" type="time" required></label>
+      <label>Cliente/local<input id="client" required placeholder="Ex.: KFC Presidente Vargas"></label>
+      <label>Serviço<input id="service" required placeholder="Ex.: Dedetização"></label>
+      <label>Equipe<input id="team" placeholder="Ex.: Gabriel e William"></label>
+      <label>Endereço ou link do Maps<input id="map" placeholder="https://maps.google.com/..."></label>
+      <label>Observações<textarea id="notes" rows="3" placeholder="Orientações importantes"></textarea></label>
+      <div class="dialog-actions">
+        <button type="button" id="cancelBtn" class="secondary">Cancelar</button>
+        <button type="submit" class="primary">Salvar serviço</button>
+      </div>
+    </form>
+  </dialog>
+
+  <template id="serviceTemplate">
+    <article class="service-card">
+      <div class="service-main">
+        <div class="datetime">
+          <strong class="time"></strong>
+          <span class="date"></span>
+        </div>
+        <div class="details">
+          <h3 class="client"></h3>
+          <p class="service"></p>
+          <p class="team"></p>
+          <p class="notes"></p>
+          <a class="map" target="_blank" rel="noopener">📍 Abrir localização</a>
+        </div>
+      </div>
+      <div class="service-actions">
+        <select class="status">
+          <option>Aguardando</option>
+          <option>Em andamento</option>
+          <option>Concluído</option>
+          <option>Imprevisto</option>
+        </select>
+        <button class="edit secondary">Editar</button>
+        <button class="delete danger">Excluir</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="HaxVetor-data.js"></script>
+  <script src="HaxVetor-app.js"></script>
+</body>
 </html>
